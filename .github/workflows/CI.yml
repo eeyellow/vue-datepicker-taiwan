@@ -15,12 +15,8 @@ permissions:
     pages: write
     id-token: write
 
-concurrency:
-    group: ci-${{ github.ref }}
-    cancel-in-progress: true
-
 jobs:
-    test:
+    publish:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v4
@@ -28,34 +24,12 @@ jobs:
           with:
                 node-version: 20
                 cache: 'npm'
-        - name: Test Step
+        - name: Publish to NPM
           run: |
             set -ex
-            npm install
+            npm ci
             npm run test --if-present
-    build:
-        needs: test
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-          with:
-                node-version: 20
-                cache: 'npm'
-        - name: Build Step
-          run: |
             npm run build:lib --if-present
-    publish:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-          with:
-                node-version: "20"
         - uses: JS-DevTools/npm-publish@v3
           with:
                 token: ${{ secrets.NPM_TOKEN }}
-        - name: Publish Step
-          run: |
-            npm ci
