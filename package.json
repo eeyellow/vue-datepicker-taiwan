@@ -37,6 +37,7 @@
     "build": "run-p type-check build-only",
     "build:lib": "run-p type-check  && vite build --config vite.config.lib.ts",
     "preview": "vite preview",
+    "test": "run-p test:unit test:coverage test:ui",
     "test:unit": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",

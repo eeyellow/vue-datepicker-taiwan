@@ -1,0 +1,59 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: CICD Publish to NPM
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+                node-version: 20
+                cache: 'npm'
+        - name: Test Step
+          run: |
+            set -ex
+            npm run test --if-present
+    build:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+                node-version: 20
+                cache: 'npm'
+        - name: Build Step
+          run: |
+            npm run build:lib --if-present
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+                node-version: "20"
+        - uses: JS-DevTools/npm-publish@v3
+          with:
+                token: ${{ secrets.NPM_TOKEN }}
+        - name: Publish Step
+          run: |
+            npm ci
