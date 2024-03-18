@@ -31,6 +31,7 @@ jobs:
         - name: Test Step
           run: |
             set -ex
+            npm install
             npm run test --if-present
     build:
         needs: test
@@ -45,6 +46,7 @@ jobs:
           run: |
             npm run build:lib --if-present
     publish:
+        needs: build
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v4
