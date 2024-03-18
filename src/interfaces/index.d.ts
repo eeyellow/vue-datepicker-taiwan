@@ -22,6 +22,6 @@ declare module 'vue3-roc-date-picker' {
     DATE = 'date'
   }
 
-  const ROCDatePicker: Plugin;
-  export default ROCDatePicker;
+  const TWDatePicker: Plugin;
+  export default TWDatePicker;
 }

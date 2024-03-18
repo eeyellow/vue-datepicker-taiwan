@@ -2,11 +2,11 @@ import { mount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import { getRepublicEraYear } from '@/utils';
 import { CalendarType, Language, YearType } from '@/interfaces';
-import ROCDatePicker from '../ROCDatePicker.vue';
+import TWDatePicker from '../TWDatePicker.vue';
 
-describe('Test Component ROCDatePicker', () => {
+describe('Test Component TWDatePicker', () => {
   it('init calendar properly', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: {
         defaultValue: '1879-12-01'
       }
@@ -20,7 +20,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test click on go to last decade button', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -36,7 +36,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test click on go to last year button', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -48,7 +48,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test click on go to last month button', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: {
         defaultValue: '2023-01-01'
       }
@@ -76,7 +76,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test click on go to next decade button', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -92,7 +92,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test click on go to next year button', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -104,7 +104,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test click on go to next month button', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: {
         defaultValue: '2023-12-01'
       }
@@ -130,7 +130,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('render year display properly and test year button', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -171,7 +171,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('render month display properly and test month button', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -190,7 +190,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('should not show calendar when date picker is disabled', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: {
         disabled: true
       }
@@ -202,7 +202,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test select date', async () => {
-    const wrapper = mount(ROCDatePicker);
+    const wrapper = mount(TWDatePicker);
 
     const datePickerInput = wrapper.find('[data-test="date-picker-input"]');
     await datePickerInput!.trigger('click');
@@ -218,7 +218,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test select month', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: { type: CalendarType.MONTH }
     });
 
@@ -250,7 +250,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('test select year', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: { type: CalendarType.YEAR }
     });
 
@@ -287,7 +287,7 @@ describe('Test Component ROCDatePicker', () => {
   });
 
   it('watch canGoLastMonth', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: { defaultValue: '1912-01-12' }
     });
 
@@ -302,7 +302,7 @@ describe('Test Component ROCDatePicker', () => {
 
   // see: issue #1
   it('render year type switch properly', async () => {
-    const wrapper = mount(ROCDatePicker, {
+    const wrapper = mount(TWDatePicker, {
       props: {
         defaultValue: '1900-01-01'
       }

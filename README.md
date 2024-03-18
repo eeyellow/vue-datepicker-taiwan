@@ -1,4 +1,4 @@
-# vue-roc-date-picker
+# vue-datepicker-taiwan
 
 A date picker UI component displays year in Republic Era or Common Era.<br>
 以 Vue3 + Typescript 開發，一個可顯示民國 / 西元年的日期選擇器 UI 套件
@@ -6,21 +6,21 @@ A date picker UI component displays year in Republic Era or Common Era.<br>
 
 ## Installation 安裝
 ```sh
-npm i vue3-roc-date-picker
+npm i vue-datepicker-taiwan
 ```
 
 ## Usage 用法
 ```js
 // main.ts
-import ROCDatePicker from 'vue3-roc-date-picker';
-import 'vue3-roc-date-picker/dist/style.css';
+import TWDatePicker from 'vue-datepicker-taiwan';
+import 'vue-datepicker-taiwan/dist/style.css';
 
-app.use(ROCDatePicker);
+app.use(TWDatePicker);
 ```
 
 ```js
 // App.vue
-<ROCDatePicker
+<TWDatePicker
   v-model="value"
 />
 ```

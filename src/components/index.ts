@@ -1,8 +1,8 @@
 import type { App } from 'vue';
-import ROCDatePicker from './ROCDatePicker.vue';
+import TWDatePicker from './TWDatePicker.vue';
 
 const install: (app: import('vue').App<any>) => void = (app: App) => {
-  app.component('ROCDatePicker', ROCDatePicker);
+  app.component('TWDatePicker', TWDatePicker);
 };
-export { ROCDatePicker };
+export { TWDatePicker };
 export default { install };

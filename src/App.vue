@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="container">
         <h1>
-          {{ lang === 'zhTW' ? '民國年日曆' : 'ROC Date Picker' }}
+          {{ lang === 'zhTW' ? '民國年日曆' : 'TW Datepicker' }}
         </h1>
 
         <div class="lang-selector">
@@ -31,7 +31,7 @@
         <div class="date-picker-examples">
           <div class="date-picker">
             <span>{{ lang === Language.ZH_TW ? '年曆' : 'Year' }}</span>
-            <ROCDatePicker
+            <TWDatePicker
               v-model="selectedYear"
               :type="CalendarType.YEAR"
               :lang="lang"
@@ -43,7 +43,7 @@
 
           <div class="date-picker">
             <span>{{ lang === Language.ZH_TW ? '月曆' : 'Month' }}</span>
-            <ROCDatePicker
+            <TWDatePicker
               v-model="selectedMonth"
               :type="CalendarType.MONTH"
               :lang="lang"
@@ -55,7 +55,7 @@
 
           <div class="date-picker">
             <span>{{ lang === Language.ZH_TW ? '日曆' : 'Date' }}</span>
-            <ROCDatePicker
+            <TWDatePicker
               v-model="selectedDate"
               :type="CalendarType.DATE"
               :lang="lang"
@@ -72,13 +72,13 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import ROCDatePicker from './components/ROCDatePicker.vue';
+import TWDatePicker from './components/TWDatePicker.vue';
 import RotateIcon from './components/icons/RotateIcon.vue';
 import { CalendarType, Language } from './interfaces';
 
 export default defineComponent({
   components: {
-    ROCDatePicker,
+    TWDatePicker,
     RotateIcon
   },
   setup() {
@@ -191,3 +191,4 @@ span {
   line-height: 1.2;
 }
 </style>
+./components/TWDatePicker.vue

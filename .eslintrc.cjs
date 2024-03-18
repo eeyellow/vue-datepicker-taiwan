@@ -18,7 +18,10 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-airbnb-with-typescript'
   ],
-  parserOptions: { ecmaVersion: 'latest' },
+  parserOptions: {
+    ecmaVersion: 'latest'
+  },
+  ignorePatterns: ['docs/**/*', '.gitignore'],
   rules: {
     'import/no-extraneous-dependencies': ['warn',
       {

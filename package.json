@@ -1,6 +1,6 @@
 {
-  "name": "vue3-roc-date-picker",
-  "version": "0.1.2",
+  "name": "lc-vue-datepicker-taiwan",
+  "version": "1.0.0",
   "description": "A date picker UI component displays year in Republic Era or Common Era",
   "keywords": [
     "vue3",
@@ -9,26 +9,26 @@
     "ui-component",
     "typescript"
   ],
-  "author": "melodiehsu (https://github.com/melodiehsu)",
+  "author": "eeyellow (https://github.com/eeyellow)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melodiehsu/vue-roc-date-picker.git"
+    "url": "git+https://github.com/eeyellow/vue-datepicker-taiwan.git"
   },
   "bugs": {
-    "url": "https://github.com/melodiehsu/vue-roc-date-picker/issues"
+    "url": "https://github.com/eeyellow/vue-datepicker-taiwan/issues"
   },
   "license": "MIT",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/vue-roc-date-picker.umd.js",
-  "module": "./dist/vue-roc-date-picker.es.js",
+  "main": "./dist/vue-datepicker-taiwan.umd.js",
+  "module": "./dist/vue-datepicker-taiwan.es.js",
   "typings": "./src/interfaces/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vue-roc-date-picker.es.js",
-      "require": "./dist/vue-roc-date-picker.umd.js"
+      "import": "./dist/vue-datepicker-taiwan.es.js",
+      "require": "./dist/vue-datepicker-taiwan.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
@@ -71,7 +71,7 @@
     "vitest": "^0.34.2",
     "vue-tsc": "^1.8.8"
   },
-  "homepage": "https://github.com/melodiehsu/vue-roc-date-picker#readme",
+  "homepage": "https://github.com/eeyellow/vue-datepicker-taiwan#readme",
   "directories": {
     "doc": "docs"
   }

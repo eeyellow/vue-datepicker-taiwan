@@ -9,7 +9,7 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'docs'
   },
-  base: '/vue-roc-date-picker/',
+  base: '/vue-datepicker-taiwan/',
   plugins: [
     vue()
   ],

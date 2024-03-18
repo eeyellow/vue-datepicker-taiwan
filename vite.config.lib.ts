@@ -10,8 +10,8 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, './src/components/index.ts'),
-      name: 'vue-roc-date-picker',
-      fileName: (format) => `vue-roc-date-picker.${format}.js`
+      name: 'vue-datepicker-taiwan',
+      fileName: (format) => `vue-datepicker-taiwan.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],
@@ -23,7 +23,7 @@ export default defineConfig({
       }
     }
   },
-  base: '/vue-roc-date-picker/',
+  base: '/vue-datepicker-taiwan/',
   plugins: [
     vue()
   ],
