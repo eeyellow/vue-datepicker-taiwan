@@ -24,11 +24,15 @@ jobs:
           with:
                 node-version: 20
                 cache: 'npm'
-        - name: Publish to NPM
+        - name: Install Dependencies
           run: |
             set -ex
             npm ci
+        - name: Run Test
+          run: |
             npm run test --if-present
+        - name: Run Build
+          run: |
             npm run build:lib --if-present
         - uses: JS-DevTools/npm-publish@v3
           with:

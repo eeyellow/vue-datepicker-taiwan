@@ -1,6 +1,6 @@
 {
   "name": "@linkchain/vue-datepicker-taiwan",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A date picker UI component displays year in Republic Era or Common Era",
   "keywords": [
     "vue3",
