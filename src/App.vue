@@ -59,7 +59,7 @@
               v-model="selectedDate"
               :type="CalendarType.DATE"
               :lang="lang"
-              :default-value="new Date('2024/04/04 00:00:00')"
+              :default-value="'2024/04/04 10:00:00'"
             />
             <div class="selected-value">
               {{ selectedDate }}
