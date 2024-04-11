@@ -440,7 +440,16 @@ export default defineComponent({
 
     watch(selectedTime, () => {
       if (!isCalendarVisible.value && selectedTime.value.timeValue) {
-        emit('update:modelValue', selectedTime.value.timeValue);
+        const formattedDate = new Intl.DateTimeFormat('Latin', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hourCycle: 'h23',
+          hour: 'numeric',
+          minute: 'numeric',
+          second: 'numeric'
+        }).format(selectedTime.value.timeValue);
+        emit('update:modelValue', formattedDate);
       }
     }, { deep: true });
 
