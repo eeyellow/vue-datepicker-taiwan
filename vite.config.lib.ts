@@ -1,35 +1,27 @@
-import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { resolve } from 'node:path';
+import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
   build: {
-    target: 'esnext',
     lib: {
-      entry: resolve(__dirname, './src/components/index.ts'),
-      name: 'vue-datepicker-taiwan',
-      fileName: (format) => `vue-datepicker-taiwan.${format}.js`
+      entry: './src/components/index.js',
+      name: 'lcDatepicker',
+      formats: ['es', 'umd', 'iife', 'cjs'],
+      fileName: (format) => `lcDatepicker.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],
       output: {
-        globals: {
-          vue: 'Vue'
-        },
-        exports: 'named'
+        format: 'es'
       }
-    }
-  },
-  base: '/vue-datepicker-taiwan/',
-  plugins: [
-    vue()
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 });
